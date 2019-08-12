@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="section">
+  <scroll-view scroll-y="true" style="width:100%;" class="caidian">
+    <view class="mendian">中山路西王水店
+      <view>地址:</view>
+    </view>
+    <view class="mendian">中山路西王水店
+      <view>地址:</view>
+    </view>
+    <view class="mendian">中山路西王水店
+      <view>地址:</view>
+    </view>
+    <view class="mendian">中山路西王水店
+      <view>地址:</view>
+    </view>
+    <view class="mendian">中山路西王水店
+      <view>地址:</view>
+    </view>
+    <view class="mendian">中山路西王水店
+      <view>地址:</view>
+    </view>
+    <view class="mendian">中山路西王水店
+      <view>地址:</view>
+    </view>
+  </scroll-view>
+</view>

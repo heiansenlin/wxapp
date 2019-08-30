@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="section">
+  <scroll-view scroll-y="true" style="width:100%;" class="caidian">
+    <view class="mendian">{{title}} - {{type}}
+      <view>价格:{{money}}元</view>
+    </view>
+  <button>结算</button>
+  </scroll-view>
+</view>

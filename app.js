@@ -10,18 +10,22 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        // wx.request({
-        //   url: 'http://localhost:8888/test/login/Init?code='+res.code,
-        //   method:'GET',
-        //   success:req =>{
-        //     console.log(req);
-        //     wx.setStorage({
-        //       key: 'type',
-        //       data: req.data,
-        //     })
-        //   }
-        // })
-        // console.log(res);
+        wx.request({
+          url: 'http://localhost:8888/test/login/Init?code='+res.code,
+          method:'GET',
+          success:req =>{
+            console.log(req);
+            wx.setStorage({
+              key: 'userid',
+              data: req.data,
+            })
+          }
+        })
+        console.log(res);
+        wx.setStorage({
+          key: 'money',
+          data: 0,
+        })
       }
     })
     // 获取用户信息

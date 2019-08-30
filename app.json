@@ -2,7 +2,12 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/store/store",
+    "pages/coupon/coupon",
+    "pages/cartItems/cartItems",
+    "pages/couponSettle/couponSettle",
+    "pages/address/address"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,12 +19,16 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "首页"
+        "pagePath": "pages/store/store",
+        "text": "门店"
       },
       {
-        "pagePath": "pages/home/home",
-        "text": "门店"
+        "pagePath": "pages/coupon/coupon",
+        "text": "水票"
+      },
+      {
+        "pagePath": "pages/cartItems/cartItems",
+        "text": "购物车"
       }
     ]
   }

@@ -4,32 +4,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    channel:[{
-    }]
+    id:'',
+    title:'',
+    type:'',
+    money:0
   },
-  click:function(e){
-    var name = e.currentTarget.dataset.name;
-    wx.setStorage({
-      key: 'channelId',
-      data: name,
-    })
-    wx.switchTab({
-      url: '/pages/store/store'
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.request({
-      url: 'http://localhost:8888/test/channel/findAllByType?type=1',
-      method:'GET',
-      success:req =>{
-        console.log(req.data);
-        this.setData({
-          channel:req.data
-        })
-      }
+    this.setData({
+      id:options.id,
+      title: options.title,
+      type: options.type,
+      money: options.money
     })
   },
 

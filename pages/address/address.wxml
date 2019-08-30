@@ -1,0 +1,5 @@
+<view>
+<view wx:for="{{address}}" data-index="{{index}}" bindtap="choose">{{item.address}}</view>
+<input type="text" bindinput="address"></input>
+<button bindtap="save">新增</button>
+</view>

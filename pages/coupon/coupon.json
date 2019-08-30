@@ -1,0 +1,19 @@
+{
+  "usingComponents": {},
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/store/store",
+        "text": "商品"
+      },
+      {
+        "pagePath": "pages/coupon/coupon",
+        "text": "水票"
+      },
+      {
+        "pagePath": "pages/cartItems/cartItems",
+        "text": "购物车"
+      }
+    ]
+  }
+}

@@ -4,10 +4,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:'',
+    couponId:'',
     title:'',
+    userId:'',
     type:'',
+    typeId:'',
     money:0
+  },
+
+  settle:function(){
+    wx.request({
+      url: 'http://localhost:8888/test/couponType/save?couponId='
+        + this.data.couponId + '&couponTypeId=' + this.data.typeId 
+        +'&userId='+this.data.userId+'&money='+this.data.money,
+    })
   },
 
   /**
@@ -15,10 +25,12 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      id:options.id,
+      couponId:options.id,
       title: options.title,
       type: options.type,
-      money: options.money
+      typeId: options.typeId,
+      money: options.money,
+      userId: wx.getStorageSync("userid")
     })
   },
 

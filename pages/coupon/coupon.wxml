@@ -4,7 +4,7 @@
     <view wx:for="{{goods}}" wx:for-item="item" wx:for-index="index" class="mendian" data-index='{{index}}'>{{item.name}}
       <view>价格:{{item.money}}元</view>
       <view wx:for="{{item.couponType}}" wx:for-item="couponType" wx:for-index="indexs" wx:key="id" bindtap="change" 
-      data-money="{{couponType.money}}" data-name="{{couponType.name}}" data-index="{{index}}">{{couponType.name}}</view>
+      data-money="{{couponType.money}}" data-id="{{couponType.id}}" data-name="{{couponType.name}}" data-index="{{index}}">{{couponType.name}}</view>
       <!-- <view class='num_change'>
         <image class='minus_icon' src='../../img/jian.jpg' data-index='{{index}}' data-types='minus' catchtap='numchangeTap'>
         </image>

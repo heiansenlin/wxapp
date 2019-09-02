@@ -4,6 +4,6 @@
     <view class="mendian">{{title}} - {{type}}
       <view>价格:{{money}}元</view>
     </view>
-  <button>结算</button>
+  <button bindtap="settle">结算</button>
   </scroll-view>
 </view>

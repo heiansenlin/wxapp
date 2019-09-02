@@ -10,7 +10,8 @@ Page({
     cartItems: [],
     money: '',
     address: '',
-    addressId: ''
+    addressId: '',
+    coupons:[]
   },
   add: function(e) {
     wx.navigateTo({
@@ -158,11 +159,26 @@ Page({
     var addre = wx.getStorageSync("address");
     var addressid = wx.getStorageSync("addressid");
     console.info("缓存数据：" + mon);
+    var str = '';
+    for(var a=0;a<arr.length;a++){
+      str += arr[a].id+",";
+    }
     this.setData({
       cartItems: arr,
       money: mon,
       address: addre,
       addressId: addressid
+    })
+    wx.request({
+      url: 'http://localhost:8888/test/couponTypeUser/getByOpenIdAndGoodsId?openId='
+      +wx.getStorageSync("userid")+'&goodsIds='+str,
+      method:'GET',
+      success:req =>{
+        this.setData({
+          coupons:req.data
+        })
+        console.log(this.data.coupons);
+      }
     })
   },
 

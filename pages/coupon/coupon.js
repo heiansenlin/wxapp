@@ -7,7 +7,8 @@ Page({
     id: '1',
     goods: {},
     cache:{},
-    changeName:''
+    changeName:'',
+    typeId:''
   },
   //点击加减按钮  
   // numchangeTap: function (e) {
@@ -97,6 +98,7 @@ Page({
   change:function(e){
     let Index = e.currentTarget.dataset.index;//点击的商品下标值       
     var name = e.currentTarget.dataset.name;//点击的商品规格名称       
+    var id = e.currentTarget.dataset.id;//点击的商品规格名称       
     var shopcar = this.data.goods;
     var money = e.currentTarget.dataset.money;
     shopcar[Index].money = money;
@@ -104,7 +106,8 @@ Page({
     console.log(money);
     this.setData({
       goods : shopcar,
-      changeName:name
+      changeName:name,
+      typeId : id
     })
   },
   buyCoupon:function(e){
@@ -113,7 +116,7 @@ Page({
     var item = shopcar[Index];
     wx.navigateTo({
       url: '/pages/couponSettle/couponSettle?id='+item.id+'&title='+item.name
-      +'&type='+this.data.changeName+'&money='+item.money,
+      +'&type='+this.data.changeName+'&typeId='+this.data.typeId+'&money='+item.money,
     })
   },
   /**

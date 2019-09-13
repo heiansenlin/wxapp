@@ -45,6 +45,11 @@ Page({
       success: req => {
         if (req.data == 1) {
           var time = new Date().getTime();
+          wx.showToast({
+            title: "订单创建完成",
+            icon: "success",
+            durantion: 2000
+          })
           wx.requestPayment({
             timeStamp: '',
             nonceStr: '',
@@ -158,17 +163,11 @@ Page({
     var mon = wx.getStorageSync("money");
     var addre = wx.getStorageSync("address");
     var addressid = wx.getStorageSync("addressid");
-    console.info("缓存数据：" + mon);
+    
     var str = '';
-    for(var a=0;a<arr.length;a++){
-      str += arr[a].id+",";
+    for (var a = 0; a < arr.length; a++) {
+      str += arr[a].id + ",";
     }
-    this.setData({
-      cartItems: arr,
-      money: mon,
-      address: addre,
-      addressId: addressid
-    })
     wx.request({
       url: 'http://localhost:8888/test/couponTypeUser/getByOpenIdAndGoodsId?openId='
       +wx.getStorageSync("userid")+'&goodsIds='+str,
@@ -178,6 +177,31 @@ Page({
           coupons:req.data
         })
         console.log(this.data.coupons);
+        var money = 0;
+        var coupon = this.data.coupons;
+        for (var a = 0; a < arr.length; a++) {
+          var goods = arr[a];
+          var quantity = goods.quantity;
+          for (var b = 0; b < coupon.length; b++) {
+            var cou = coupon[b];
+            if (goods.id === cou.goodsId) {
+              var surNum = cou.seNum;
+              if (quantity * 1 <= surNum * 1) {
+                goods.price = 0;
+              }else{
+                quantity = quantity * 1 - surNum * 1;
+              }
+            }
+          }
+          money += goods.price * quantity;
+        }
+        console.info("缓存数据：" + mon);
+        this.setData({
+          cartItems: arr,
+          money: money,
+          address: addre,
+          addressId: addressid
+        })
       }
     })
   },

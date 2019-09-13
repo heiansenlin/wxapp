@@ -2,7 +2,7 @@
 <view class="section">
   <scroll-view scroll-y="true" style="width:100%;" class="caidian">
   <view>收货地址</view><text>{{address}}</text><button bindtap="add">选择/新增</button>
-    <view wx:for="{{cartItems}}" wx:if="{{item.type==1}}" class="mendian" data-index='{{index}}'>{{item.title}}
+    <view wx:for="{{cartItems}}" wx:for-item="item" wx:if="{{item.type==1}}" class="mendian" data-index='{{index}}'>{{item.title}}
       <view>价格:{{item.price}}元/{{item.company}}</view>
       <view class='num_change'>
         <image class='minus_icon' src='../../img/jian.jpg' data-index='{{index}}' data-types='minus' catchtap='numchangeTap'>
@@ -13,6 +13,8 @@
         <image class='del_icon' data-index='{{index}}' bindtap="del"  src='../../img/timg.jpg'>
         </image>
       </view>
+      <view wx:for="{{coupons}}" wx:for-item="coupon" wx:if="{{coupon.goodsId==item.id}}">
+      {{coupon.name}}-剩余：{{coupon.seNum}}  将用：{{item.quantity}}</view>
     </view>
     <view>总价：{{money}}</view>
     <button bindtap="submit">结算</button>

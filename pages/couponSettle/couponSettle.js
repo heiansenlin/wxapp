@@ -14,7 +14,7 @@ Page({
 
   settle:function(){
     wx.request({
-      url: 'http://localhost:8888/test/couponType/save?couponId='
+      url: 'http://localhost:8888/test/couponTypeUser/save?couponId='
         + this.data.couponId + '&couponTypeId=' + this.data.typeId 
         +'&userId='+this.data.userId+'&money='+this.data.money,
     })

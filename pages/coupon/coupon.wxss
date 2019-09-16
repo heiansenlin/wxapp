@@ -5,10 +5,12 @@
   height: 100%;
 }
 .mendian{
-  width: 100%;
+  width: 95%;
   height: 100px;
-  border-bottom-width: 1px;
+  border: 1px solid;
   border-bottom-color: black;
+  margin-left: 10px;
+  margin-top: 2px;
 }
 /*数量*/
 .dian{
@@ -69,4 +71,22 @@ border-radius:29rpx;
 .add_icon,.minus_icon{
   width: 38rpx;  
   height: 38rpx;
+}
+.tupian{
+  width: 35%;
+  height: 100px;
+  float: left;
+}
+.shangpin{
+  width: 65%;
+  height: 100px;
+  float: left;
+}
+.type{
+  width: 50%;
+  float: left;
+}
+.buy{
+  width: 35%;
+  float: left;
 }

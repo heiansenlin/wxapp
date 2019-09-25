@@ -50,6 +50,9 @@ Page({
             icon: "success",
             durantion: 2000
           })
+          wx.removeStorageSync("cartItems");
+          wx.removeStorageSync("money");
+          this.onLoad();
           wx.requestPayment({
             timeStamp: '',
             nonceStr: '',
@@ -181,19 +184,20 @@ Page({
         var coupon = this.data.coupons;
         for (var a = 0; a < arr.length; a++) {
           var goods = arr[a];
+          var price = goods.price;
           var quantity = goods.quantity;
           for (var b = 0; b < coupon.length; b++) {
             var cou = coupon[b];
             if (goods.id === cou.goodsId) {
               var surNum = cou.seNum;
               if (quantity * 1 <= surNum * 1) {
-                goods.price = 0;
+                price = 0;
               }else{
                 quantity = quantity * 1 - surNum * 1;
               }
             }
           }
-          money += goods.price * quantity;
+          money += price * quantity;
         }
         console.info("缓存数据：" + mon);
         this.setData({

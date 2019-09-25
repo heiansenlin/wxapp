@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:'1',
+    id:'',
     goods:{}
   },
   //点击加减按钮  
@@ -88,11 +88,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.getStorage({
-      key: 'channelId',
-      success: function(res) {
-        id: res.data
-      },
+    var id = wx.getStorageSync('channelId');
+    console.log(id);
+    this.setData({
+      id: id
     })
     this.onReady();
   },

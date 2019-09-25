@@ -17,6 +17,30 @@ Page({
       url: 'http://localhost:8888/test/couponTypeUser/save?couponId='
         + this.data.couponId + '&couponTypeId=' + this.data.typeId 
         +'&userId='+this.data.userId+'&money='+this.data.money,
+      success: req => {
+        if (req.data == 1) {
+          var time = new Date().getTime();
+          wx.showToast({
+            title: "订单创建完成",
+            icon: "success",
+            durantion: 2000
+          })
+          wx.requestPayment({
+            timeStamp: '',
+            nonceStr: '',
+            package: '',
+            signType: 'MD5',
+            paySign: '',
+          })
+        } else {
+          wx.showToast({
+            title: "订单创建失败",
+            icon: "lose",
+            durantion: 2000
+          })
+          console.log("订单创建失败")
+        }
+      }
     })
   },
 

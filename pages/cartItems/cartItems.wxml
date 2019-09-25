@@ -3,7 +3,7 @@
   <scroll-view scroll-y="true" style="width:100%;" class="caidian">
   <view>收货地址</view><text>{{address}}</text><button bindtap="add">选择/新增</button>
     <view wx:for="{{cartItems}}" wx:for-item="item" wx:if="{{item.type==1}}" class="mendian" data-index='{{index}}'>{{item.title}}
-      <view>价格:{{item.price}}元/{{item.company}}</view>
+      <view>价格:{{item.price}}/{{item.company}}</view>
       <view class='num_change'>
         <image class='minus_icon' src='../../img/jian.jpg' data-index='{{index}}' data-types='minus' catchtap='numchangeTap'>
         </image>

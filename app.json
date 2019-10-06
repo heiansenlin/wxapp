@@ -11,23 +11,30 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "石门到家",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#00afb4",
+    "backgroundColor": "#00afb4"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "list": [
       {
         "pagePath": "pages/store/store",
+        "iconPath": "images/nav/home-off.png",
+        "selectedIconPath": "images/nav/home-on.png",
         "text": "门店"
       },
       {
         "pagePath": "pages/coupon/coupon",
+        "iconPath": "images/nav/classification-off.png",
+        "selectedIconPath": "images/nav/classification-on.png",
         "text": "水票"
       },
       {
         "pagePath": "pages/cartItems/cartItems",
+        "iconPath": "images/nav/cart-off.png",
+        "selectedIconPath": "images/nav/cart-on.png",
         "text": "购物车"
       }
     ]

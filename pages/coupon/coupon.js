@@ -8,7 +8,10 @@ Page({
     goods: {},
     cache:{},
     changeName:'',
-    typeId:''
+    typeId:'',
+    bgRed: '0',
+    bgGreen: '175',
+    bgBlue: '180'
   },
   //点击加减按钮  
   // numchangeTap: function (e) {

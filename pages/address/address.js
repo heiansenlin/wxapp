@@ -6,7 +6,10 @@ Page({
   data: {
     address:{},
     userid:'',
-    addre:''
+    addre:'',
+    bgRed: '0',
+    bgGreen: '175',
+    bgBlue: '180'
   },
 
   choose:function(e){

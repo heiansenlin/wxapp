@@ -5,7 +5,10 @@ Page({
    */
   data: {
     channel:[{
-    }]
+    }],
+    bgRed: '0',
+    bgGreen: '175',
+    bgBlue: '180'
   },
   click:function(e){
     var name = e.currentTarget.dataset.name;

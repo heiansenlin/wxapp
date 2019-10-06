@@ -11,7 +11,10 @@ Page({
     money: '',
     address: '',
     addressId: '',
-    coupons:[]
+    coupons:[],
+    bgRed: '0',
+    bgGreen: '175',
+    bgBlue: '180'
   },
   add: function(e) {
     wx.navigateTo({

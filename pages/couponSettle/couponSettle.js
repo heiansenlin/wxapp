@@ -9,7 +9,10 @@ Page({
     userId:'',
     type:'',
     typeId:'',
-    money:0
+    money:0,
+    bgRed: '0',
+    bgGreen: '175',
+    bgBlue: '180'
   },
 
   settle:function(){

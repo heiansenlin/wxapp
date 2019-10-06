@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="section">
+<view class="section" style='background: -webkit-linear-gradient(top, rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 1), rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 0.1));'>
   <scroll-view scroll-y="true" style="width:100%;" class="caidian">
     <view wx:for="{{channel}}" class="mendian" bindtap="click" data-name="{{item.id}}">{{item.name}}
       <view>地址:{{item.address}}</view>

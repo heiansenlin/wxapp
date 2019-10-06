@@ -5,7 +5,10 @@ Page({
    */
   data: {
     id:'',
-    goods:{}
+    goods:{},
+    bgRed: '0',
+    bgGreen: '175',
+    bgBlue: '180'
   },
   //点击加减按钮  
   numchangeTap: function (e) {

@@ -1,10 +1,10 @@
 <!--index.wxml-->
-<view class="section">
+<view class="section" style='background: -webkit-linear-gradient(top, rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 1), rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 0.1));'>
   <scroll-view scroll-y="true" style="width:100%;" class="caidian">
     <view wx:for="{{goods}}" class="mendian" data-index='{{index}}'>
-      <image class="tupian" src='../../img/jia.gif'></image>
+      <image class="tupian" src='../../img/timg (1).jpg'></image>
       <view class="shangpin">{{item.name}}
-        <view>价格:{{item.money}}元/{{item.company}}</view>
+        <view>价格:{{item.money}}{{item.company}}/桶</view>
         <view class='num_change'>
           <!-- <image 
                         class='minus_icon' 
@@ -14,7 +14,7 @@
                         catchtap='numchangeTap'>
                     </image>               -->
           <text class='shop_num'>{{item.num}}</text>
-          <image class='add_icon' data-index='{{index}}' data-types='add' catchtap='numchangeTap' src='../../img/jia.gif'>
+          <image class='add_icon' data-index='{{index}}' data-types='add' catchtap='numchangeTap' src='../../img/timg (2).png'>
           </image>
         </view>
       </view>

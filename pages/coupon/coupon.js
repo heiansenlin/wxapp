@@ -114,13 +114,24 @@ Page({
     })
   },
   buyCoupon:function(e){
-    let Index = e.currentTarget.dataset.index;//点击的商品下标值       
-    var shopcar = this.data.goods;
-    var item = shopcar[Index];
-    wx.navigateTo({
-      url: '/pages/couponSettle/couponSettle?id='+item.id+'&title='+item.name
-      +'&type='+this.data.changeName+'&typeId='+this.data.typeId+'&money='+item.money,
-    })
+    var changeName = this.data.changeName;
+    console.log(changeName);
+    if(changeName != null&&changeName!=''){
+      let Index = e.currentTarget.dataset.index;//点击的商品下标值       
+      var shopcar = this.data.goods;
+      var item = shopcar[Index];
+      wx.navigateTo({
+        url: '/pages/couponSettle/couponSettle?id=' + item.id + '&title=' + item.name
+          + '&type=' + changeName + '&typeId=' + this.data.typeId + '&money=' + item.money,
+      })
+    }else{
+      //提示未选择种类
+      wx.showToast({
+        title: "请选择水票种类",
+        icon: "flase",
+        durantion: 2000
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载
